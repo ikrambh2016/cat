@@ -1,0 +1,8 @@
+
+<ul *ngIf="cats.length">
+    <li *ngFor="let cat of cats">
+       <span>{{ cat.vote }} Vote(s)</span><img src="{{ cat.url }}" />
+    </li>
+  </ul>
+<h1  *ngIf="!cats.length">Vous n'avez pas voté</h1>
+

@@ -7,15 +7,18 @@ import { StorageService } from './services/storage.service';
 
 import { AppComponent } from './app.component';
 import { VoteComponent } from './pages/vote/vote.component';
+import { ResultComponent } from './pages/result/result.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'vote', pathMatch: 'full' },
-  { path: 'vote', component: VoteComponent }
+  { path: 'vote', component: VoteComponent },
+  { path: 'result', component: ResultComponent }
 ];
 @NgModule({
   declarations: [
     AppComponent,
-    VoteComponent
+    VoteComponent,
+    ResultComponent
   ],
   imports: [
     BrowserModule,
