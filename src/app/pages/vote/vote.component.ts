@@ -28,6 +28,20 @@ export class VoteComponent implements OnInit {
       this.secondCandidate = Math.floor(Math.random() * this.cats.length);
     } while (this.firstCandidate === this.secondCandidate);
   }
+
+  getTotalVotes() {
+    if (+this.storageService.get('totalVotes') === null) {
+      this.storageService.set('totalVotes', '0');
+    }
+    return +this.storageService.get('totalVotes');
+  }
+
+  incrementTotalVotes() {
+    let totalvotes = this.getTotalVotes();
+    totalvotes++;
+    this.storageService.set('totalVotes', String(totalvotes));
+  }
+
   vote(index) {
     const cat: Cat = this.cats[index];
     let voteCount = +this.storageService.get(`cat_${cat.id}`);
@@ -38,6 +52,7 @@ export class VoteComponent implements OnInit {
       voteCount++;
       this.storageService.set(`cat_${cat.id}`, String(voteCount));
     }
+    this.incrementTotalVotes();
     this.initCandidate();
   }
 }
