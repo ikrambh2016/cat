@@ -1,0 +1,57 @@
+@import '../../variables';
+
+.vote {
+  display: flex;
+  border: 2px solid $white-color;
+  height: 100vh;
+  min-width: 768px;
+
+  &__list {
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    &__item {
+      align-items: center;
+      background-color: $dark-grey-color;
+      flex: 1;
+      height: 100%;
+      justify-content: center;
+      display: flex;
+
+      &--clear {
+        justify-content: center;
+        background-color: $grey-color;
+      }
+
+      &__mask {
+        display: flex;
+        list-style: none;
+        border-radius: 100% 100% 100% 0;
+        overflow: hidden;
+        width: 300px;
+        height: 300px;
+        transform: rotate(-48deg);
+        transform-origin: center;
+        border: 6px solid $white-color;
+        cursor: pointer;
+
+        span {
+          height: 360px;
+          display: flex;
+          transform: rotate(48deg) translateX(-40px) translateY(30px);
+          transform-origin: center;
+          width: 360px;
+
+          img {
+            min-height: 100%;
+            min-width: 100%;
+            width: auto;
+            height: auto;
+          }
+        }
+      }
+    }
+  }
+}

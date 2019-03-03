@@ -1,0 +1,22 @@
+<div class="vote">
+  <div class="vote__list no-padding no-margin">
+    <div class="vote__list__item">
+      <div class="vote__list__item__mask">
+        <span
+          ><img
+            src="{{ this.cats[this.firstCandidate].url }}"
+            (click)="vote(this.firstCandidate)"
+        /></span>
+      </div>
+    </div>
+    <div class="vote__list__item vote__list__item--clear">
+      <div class="vote__list__item__mask">
+        <span
+          ><img
+            src="{{ this.cats[this.secondCandidate].url }}"
+            (click)="vote(this.secondCandidate)"
+        /></span>
+      </div>
+    </div>
+  </div>
+</div>
